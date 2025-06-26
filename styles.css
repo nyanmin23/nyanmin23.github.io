@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Medium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    /* Fall back to next font if first one fails */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --lh: 1.5em;
+}
+
+
+::selection {
+    color: #fff;
+    background: #000;
+}
+
+
+html,
+body {
+    background-color: rgb(252, 245, 229);
+}
+
+h1 {
+    font-size: inherit;
+}
+
+
+h1,
+nav,
+p {
+    margin-bottom: var(--lh);
+}
+
+
+nav {
+    margin-top: calc(-1em/6);
+}
+
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: calc(14rem/16);
+    padding: 16vh 2em 0;
+    display: grid;
+    grid: 1fr / minmax(auto, 64ch);
+    justify-content: center;
+    height: 100%;
+}
+
+
+span {
+    color: #888;
+}
+
+
+.divider {
+    margin-top: var(--lh);
+}
+
+
+a {
+    color: inherit;
+    display: inline-block;
+    padding: calc(1em/6);
+    margin-left: calc(-1em/6);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    transition: all 0.1s ease-in-out;
+}
+
+
+a:hover {
+    color: #555;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+
+a:active {
+    transform: translateY(1px);
+}
+
+
+footer {
+    padding: calc(var(--lh) * 2) 0 8vh
+}
+
+
+footer p {
+    margin: 0
+}
+
+
+.contact-info {
+    padding: calc(1em/6);
+    margin-left: calc(-1em/6);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+
+.contact-info:hover {
+    color: #555;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+
+.contact-info:active {
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.cursor-blink {
+    color: #333;
+    animation: blink 1s step-start infinite;
+}
+
+
+@keyframes dot-blink {
+    0% {
+        content: '';
+    }
+
+    33% {
+        content: '.';
+    }
+
+    66% {
+        content: '..';
+    }
+
+    100% {
+        content: '...';
+    }
+}
+
+
+.dot-blink::after {
+    color: #000;
+    content: '';
+    animation: dot-blink 1s steps(3) infinite;
+}
