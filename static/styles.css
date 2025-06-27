@@ -461,7 +461,8 @@ footer p {
 }
 
 .dark-mode .cursor-blink,
-a:hover {
+.dark-mode a:hover,
+.dark-mode .dot-blink::after {
     color: #fff;
 }
 
